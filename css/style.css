@@ -11,7 +11,6 @@ a {
   text-decoration: none;
 }
 
-
 :root {
   --label-font-medium: 1rem;
   --label-font-large: 1.1rem;
@@ -24,7 +23,6 @@ html {
 
 body {
   background-color: rgb(9, 9, 9);
-  height: 3000px;
 }
 
 .nav-container {
@@ -67,7 +65,7 @@ body {
 .hero-title {
   font-size: 3rem;
   color: black;
-  width: 521px;
+  max-width: fit-content;
   background-color: orange;
   font-weight: bold;
   line-height: 1.1;
@@ -107,19 +105,13 @@ body {
 .kosong {
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
 /* asdas */
 
-.top-popular {
-  display: flex;
-}
-
 .anime-category {
   font-size: 2rem;
 }
-
 
 /* 10D */
 .recreate-9f {
@@ -132,10 +124,11 @@ body {
   position: relative;
 }
 
-  .content-setting {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
+.content-setting {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-left: 0px;
+}
 
 .image-card {
   border-radius: 25px;
@@ -232,16 +225,12 @@ body {
 
 /* left bar is sticky when scroll container */
 
-
-
-
 .left-bar {
-
   position: sticky;
   top: 100px; /* Keeps the bar at the top of the viewport */
 
   height: 250px; /* Optional: Adjust the height as needed */
-  max-width: 400px; /* Adjust the width as needed */
+  max-width: 300px; /* Adjust the width as needed */
   padding: 20px; /* Optional: Add padding as needed, as a margin for text to card container*/
   background-color: rgb(0, 0, 0);
   margin-left: 20px;
@@ -252,12 +241,10 @@ body {
   border-radius: 30px;
 }
 
-
 .top {
   max-width: 400px;
   font-size: var(--label-font-medium);
 }
-
 
 .category {
   margin-top: 10px;
@@ -277,8 +264,6 @@ body {
   margin-top: 10px;
 }
 
-
-
 /* responsive */
 /* responsive hide left-bar when < 700px */
 @media (max-width: 700px) {
@@ -294,58 +279,55 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-
-
 }
 
 /* 
 @media (max-width: 1500px) {
   .inside-card {
     /* Adjustments for larger screens */
-    /* margin: 20px 15px 12px;
+/* margin: 20px 15px 12px;
   } */
 
-  /* .content-container {
+/* .content-container {
     margin-left: 430px;
   } */
 
-  /* Add more CSS rules as needed to maintain the style for larger screens */
+/* Add more CSS rules as needed to maintain the style for larger screens */
 /* } */
 
 /* @media (min-width: 1000px) {
   .inside-card {
     /* Adjustments for larger screens */
-    /* margin: 20px 15px 12px;
+/* margin: 20px 15px 12px;
   } */
 
-  /* Add more CSS rules as needed to maintain the style for larger screens */
+/* Add more CSS rules as needed to maintain the style for larger screens */
 /* } */
 /* 
 @media (min-width: 700px) {
   .inside-card {
     /* Adjustments for larger screens */
-    /* margin: 20px 15px 12px;
-  } */ 
+/* margin: 20px 15px 12px;
+  } */
 
-  /* .content-setting {
+/* .content-setting {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   } */
 
-  /* Add more CSS rules as needed to maintain the style for larger screens */
+/* Add more CSS rules as needed to maintain the style for larger screens */
 /* }
-*/ 
+*/
 
 /* loading card */
 
 .loading-card {
-padding: 100px 500px;
+  padding: 100px 500px;
 
   background-color: transparent;
   position: relative;
   border-radius: 30px;
 }
-
 
 /* loading */
 
@@ -357,15 +339,15 @@ padding: 100px 500px;
 
   height: 80px;
   aspect-ratio: 1;
-  display: grid;z-index: 99;
+  display: grid;
+  z-index: 99;
 }
 
 /* HTML: <div class="loader"></div> */
 
-
 .loading {
   /* change color here */
-  color: #1c4c5b
+  color: #1c4c5b;
 }
 .loading,
 .loading div {
@@ -402,7 +384,8 @@ padding: 100px 500px;
     top: 8px;
     height: 64px;
   }
-  50%, 100% {
+  50%,
+  100% {
     top: 24px;
     height: 32px;
   }

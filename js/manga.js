@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Check if the screen width is greater than 1500px
   let screenWidth = window.innerWidth;
   let limit = screenWidth > 1500 ? 10 : 5;
-  let url = `https://kitsu.io/api/edge/trending/anime?page[limit]=${limit}`;
+  let url = `https://kitsu.io/api/edge/trending/manga?page[limit]=${limit}`;
 
   let data = await hitAPI(url);
   data = data.data;
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <img class="image-card" src="${attr.posterImage.small}" />
               </a>
               <div class="box">
-                <a href="" class="name-9f">${attr.titles.en_jp}</a>
+                <a href="" class="name-9f">${attr.titles.en_us}</a>
                 <a href="" class="description-1">Check Detail</a><br />
 
                 <a class="description-2"
@@ -45,7 +45,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
       `;
     } else {
-      teks += `
+        if (attr.titles.en_us = undefined, null) {
+            teks += `
+            <div class="inside-card" style="margin: 18px 13px 10px">
+              <a href="">
+                <img class="image-card" src="${attr.posterImage.small}" />
+              </a>
+              <div class="box">
+                <a href="" class="name-9f">${attr.titles.en_jp}</a>
+                <a href="" class="description-1">Check Detail</a><br />
+
+                <a class="description-2"
+                  >Rating: <span class="rating">${attr.averageRating}</span>
+                </a>
+              </div>
+            </div>
+        `
+        } else {
+            teks += `
             <div class="inside-card" style="margin: 18px 13px 10px">
               <a href="">
                 <img class="image-card" src="${attr.posterImage.small}" />
@@ -59,7 +76,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </a>
               </div>
             </div>
-        `;
+        `
+        }
     }
 
     // teks += `
@@ -99,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Check if the screen width is greater than 1500px
   let screenWidth = window.innerWidth;
   let limit = screenWidth > 1500 ? 10 : 5;
-  let url = `https://kitsu.io/api/edge/anime?filter[status]=upcoming&page[limit]=${limit}`;
+  let url = `https://kitsu.io/api/edge/manga?filter[status]=upcoming&page[limit]=${limit}`;
 
   let data = await hitAPI(url);
   data = data.data;
@@ -177,8 +195,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 document.addEventListener("DOMContentLoaded", async () => {
   // Check if the screen width is greater than 1500px
   let screenWidth = window.innerWidth;
-  let limit = screenWidth > 1500 ? 15 : 5;
-  let url = `https://kitsu.io/api/edge/anime?filter[status]=current&page[limit]=${limit}`;
+  let limit = screenWidth > 1500 ? 10 : 5;
+
+  let url = `https://kitsu.io/api/edge/manga?sort=ratingRank&page[limit]=${limit}`;
 
   let data = await hitAPI(url);
   data = data.data;
@@ -196,7 +215,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <img class="image-card" src="${attr.posterImage.small}" />
           </a>
           <div class="box">
-          <a href="" class="name-9f">${attr.titles.en_jp}</a>
+          <a href="" class="name-9f">${attr.titles.en_us}</a>
           <a href="" class="description-1">Check Detail</a><br />
 
           <a class="description-2"
