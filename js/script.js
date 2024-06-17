@@ -10,6 +10,8 @@ const hitAPI = async (url) => {
 };
 var stylesheetElem = document.querySelector('head link[rel="stylesheet"]');
 
+// TOP TRENDING
+
 document.addEventListener("DOMContentLoaded", async () => {
   // Check if the screen width is greater than 1500px
   let screenWidth = window.innerWidth;
@@ -22,23 +24,60 @@ document.addEventListener("DOMContentLoaded", async () => {
   let teks = "";
   data.forEach((element) => {
     let attr = element.attributes;
-    teks += `
 
+
+    
+    if (attr.titles.en === undefined) {
+      teks += `
             <div class="inside-card" style="margin: 18px 13px 10px">
               <a>
                 <img class="image-card" src="${attr.posterImage.small}" />
               </a>
               <div class="box">
-                <a class="name-9f">${attr.titles.en}</a>
-                <a class="description-1">Check Detail</a><br />
+                <a href="" class="name-9f">${attr.titles.en_jp}</a>
+                <a href="" class="description-1">Check Detail</a><br />
 
                 <a class="description-2"
                   >Rating: <span class="rating">${attr.averageRating}</span>
                 </a>
               </div>
             </div>
-   
+      `;
+    } else {
+      teks += `
+            <div class="inside-card" style="margin: 18px 13px 10px">
+              <a href="">
+                <img class="image-card" src="${attr.posterImage.small}" />
+              </a>
+              <div class="box">
+                <a href="" class="name-9f">${attr.titles.en}</a>
+                <a href="" class="description-1">Check Detail</a><br />
+
+                <a class="description-2"
+                  >Rating: <span class="rating">${attr.averageRating}</span>
+                </a>
+              </div>
+            </div>
         `;
+    }
+
+    // teks += `
+
+            // <div class="inside-card" style="margin: 18px 13px 10px">
+            //   <a>
+            //     <img class="image-card" src="${attr.posterImage.small}" />
+            //   </a>
+            //   <div class="box">
+            //     <a class="name-9f">${attr.titles.en}</a>
+            //     <a class="description-1">Check Detail</a><br />
+
+            //     <a class="description-2"
+            //       >Rating: <span class="rating">${attr.averageRating}</span>
+            //     </a>
+            //   </div>
+            // </div>
+   
+    //     `;
 
     //* <a class="friend-text">  ${attr.synopsis}</a>
     //* <a> ${attr.ageRating}</a>
@@ -53,6 +92,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   content.innerHTML = teks;
 });
 
+
+// TOP UPCOMING
 document.addEventListener("DOMContentLoaded", async () => {
   // Check if the screen width is greater than 1500px
   let screenWidth = window.innerWidth;
@@ -66,18 +107,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   data.forEach((element) => {
     let attr = element.attributes;
 
-    if (attr.titles.en === undefined) {
+    if (attr.titles.en === undefined && attr.averageRating === null) {
       teks += `
               <div class="inside-card" style="margin: 18px 13px 10px">
-                <a>
+                <a href="">
                   <img class="image-card" src="${attr.posterImage.small}" />
                 </a>
                 <div class="box">
-                  <a class="name-9f">${attr.titles.en_jp}</a>
-                  <a class="description-1">Check Detail</a><br />
+                  <a href="" class="name-9f">${attr.titles.en_jp}</a>
+                  <a href="" class="description-1">Check Detail</a><br />
   
                   <a class="description-2"
-                    >Rating: <span class="rating">${attr.averageRating}</span>
+                    >Release At: <span class="rating">${attr.startDate}</span>
                   </a>
                 </div>
               </div>
@@ -85,15 +126,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
       teks += `
               <div class="inside-card" style="margin: 18px 13px 10px">
-                <a>
+                <a href="">
                   <img class="image-card" src="${attr.posterImage.small}" />
                 </a>
                 <div class="box">
-                  <a class="name-9f">${attr.titles.en}</a>
-                  <a class="description-1">Check Detail</a><br />
+                  <a href="" class="name-9f">${attr.titles.en}</a>
+                  <a href=""   class="description-1">Check Detail</a><br />
   
                   <a class="description-2"
-                    >Rating: <span class="rating">${attr.averageRating}</span>
+                    >Release At: <span class="rating">${attr.startDate}</span>
                   </a>
                 </div>
               </div>
