@@ -221,11 +221,22 @@ body {
 }
 
 /* left bar fixed position with desig */
+
+/* left bar is sticky when scroll container */
+
+.recommendation-container {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Adjust this value as needed */
+  height: 100vh; /* Optional: Adjust the height as needed */
+  width: 200px; /* Adjust the width as needed */
+}
+
 .left-bar {
-  position: fixed;
-  width: 370px;
+
+  /* width: 370px; */
   background-color: black;
-  height: 87%;
+
   margin-top: 90px;
   margin-left: 20px;
   margin-right: 20px;
