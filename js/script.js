@@ -2,7 +2,17 @@ let url = "https://reqres.in/api/users";
 const content = document.querySelector(".recreate-9f");
 const content2 = document.querySelector(".recreate-9g");
 const content3 = document.querySelector(".recreate-9h");
-  const topTitles = document.querySelector('.first')
+const topTitles = document.querySelector(".first");
+
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   html += `
+
+//   `;
+
+//   nav.innerHTML = html;
+// });
 
 url = "data.json";
 const hitAPI = async (url) => {
@@ -174,7 +184,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // TOP Airing
 document.addEventListener("DOMContentLoaded", async () => {
-  
   // Check if the screen width is greater than 1500px
   let screenWidth = window.innerWidth;
   let limit = screenWidth > 1500 ? 15 : 5;
@@ -259,9 +268,8 @@ const replaceTest = document.querySelector(".filter-card");
 const clickfan = document
   .querySelector(".fantasy")
   .addEventListener("click", async () => {
-
     // loading after first fetch
-    document.querySelector('.recreate-9f').innerHTML = `
+    document.querySelector(".recreate-9f").innerHTML = `
     <div class="loading-card">
       <div class="loading">
         <div></div>
@@ -274,7 +282,6 @@ const clickfan = document
     topTitle = `
        <p class="genre anime-category">Loading...</p>
   `;
-
 
     // Check if the screen width is greater than 1500px
     let screenWidth = window.innerWidth;
@@ -359,13 +366,10 @@ const clickfan = document
     topTitles.innerHTML = topTitle;
   });
 
-
-
 const clickcom = document
   .querySelector(".comedy")
   .addEventListener("click", async () => {
-
-    document.querySelector('.recreate-9f').innerHTML = `
+    document.querySelector(".recreate-9f").innerHTML = `
     <div class="loading-card">
       <div class="loading">
         <div></div>
@@ -375,7 +379,7 @@ const clickcom = document
     </div>
   `;
 
-  topTitle = `
+    topTitle = `
   <p class="genre anime-category">Loading...</p>
 `;
 
@@ -394,7 +398,7 @@ const clickcom = document
   `;
     data.forEach((element) => {
       let attr = element.attributes;
-      
+
       topTitle += ` p class="genre anime-category">Loading...</p>`;
 
       if (attr.titles.en === undefined) {

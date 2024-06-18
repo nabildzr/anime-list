@@ -81,16 +81,13 @@ body {
   font-weight: bold;
 }
 
-
 .title-body {
   padding: 10px;
   display: grid;
   grid-template-columns: 5fr 1fr;
-
 }
 
 .btn-filter {
- 
   background-color: orange;
   border: none;
   color: black;
@@ -98,18 +95,17 @@ body {
   font-size: 20px;
   border-radius: 0px;
   font-weight: bold;
-  transition: .5s;
+  transition: 0.5s;
   cursor: pointer;
 }
 
 .btn-filter:hover {
-
   border: 1px solid orange;
   padding: 9.5px;
-  background-color:black ;
-  color:orange ;
- 
-  transition: .5s;
+  background-color: black;
+  color: orange;
+
+  transition: 0.5s;
 }
 
 /* .hero-title:hover {
@@ -238,12 +234,11 @@ body {
     justify-content: j
 } */
 
-
-
 .main-container {
-  display: grid;
-  grid-template-columns: 1fr -1fr;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Keeps content centered horizontally; adjust as needed */
+  align-items: flex-start; /* Aligns children, including .left-bar, to the top */
 }
 
 .content-container {
@@ -260,6 +255,9 @@ body {
 
 /* left bar is sticky when scroll container */
 
+/* make the left bar is in top and sticky */
+
+
 .left-bar {
   position: sticky;
   top: 100px; /* Keeps the bar at the top of the viewport */
@@ -269,7 +267,7 @@ body {
   padding: 20px; /* Optional: Add padding as needed, as a margin for text to card container*/
   background-color: rgb(0, 0, 0);
   margin-left: 20px;
-
+ 
   margin-bottom: 20px;
 
   box-shadow: 0px 0px 5px 0px black;
@@ -279,6 +277,7 @@ body {
 .top {
   max-width: 400px;
   font-size: var(--label-font-medium);
+  margin-top: 10px;
 }
 
 .category {
@@ -286,6 +285,10 @@ body {
   padding-left: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.category-text {
+  padding-right: 30px;
 }
 
 .category-text:hover {
@@ -296,26 +299,51 @@ body {
 .category-title {
   font-size: var(--label-font-large);
   font-weight: bold;
-  margin-top: 10px;
 }
 
 /* responsive */
 /* responsive hide left-bar when < 700px */
-@media (max-width: 700px) {
-  .left-bar {
-    display: none;
-  }
+/* @media (max-width: 700px) {
 
-  .content-container {
-    margin-left: 0;
-  }
+
 
   .content-setting {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-}
+} */
 
+
+
+
+
+@media (max-width: 1133px) {
+  .left-bar {
+    display: none;
+  }
+
+  .main-container {
+    flex-direction: row;
+   display: inline-block;
+   justify-content: center;
+    /* align-items: cent; */
+   /* Keeps content centered horizontally; adjust as needed */
+    align-items: flex;
+  }
+
+  /*  Title area */
+  .title-body {
+    padding: 10px;
+    display: block;
+    
+  }
+  
+  .btn-filter {
+    margin-top: 1%;
+    margin-bottom: 10px;
+  }
+
+}
 /* 
 @media (max-width: 1500px) {
   .inside-card {
