@@ -81,6 +81,37 @@ body {
   font-weight: bold;
 }
 
+
+.title-body {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+
+}
+
+.btn-filter {
+ 
+  background-color: orange;
+  border: none;
+  color: black;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 0px;
+  font-weight: bold;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.btn-filter:hover {
+
+  border: 1px solid orange;
+  padding: 9.5px;
+  background-color:black ;
+  color:orange ;
+ 
+  transition: .5s;
+}
+
 /* .hero-title:hover {
 } */
 
@@ -111,6 +142,7 @@ body {
 
 .anime-category {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 /* 10D */
@@ -206,9 +238,12 @@ body {
     justify-content: j
 } */
 
+
+
 .main-container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr -1fr;
+  justify-content: center;
 }
 
 .content-container {
