@@ -1,102 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anime List</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nabildzr - Alternative Social</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
     <header class="nav-container">
+        <div class="brand">Manga List</div>
+        <nav class="nav-bar">
+            <ul class="nav-bar">
+                <li class="bar-text"><a href="index.html">Home</a></li>
+                <li class="bar-text"><a href="index.html">Anime</a></li>
+                <li class="bar-text"><a href="#">Manga</a></li>
+                <li class="bar-text"><a href="about.html">About</a></li>
+            </ul>
+        </nav>
     </header>
+    <div class="container-awal">
+        <div class="big">
 
-    <main class="main-container">
-      <div class="content-container">
-        <section class="container title-body">
-        </section>
-
-        <section class="container">
-          <div class="filter-card">
-            <p class="genre anime-category">Top Trending</p>
-            <p class="genre">More ></p>
-          </div>
-          <div class="top-popular">
-            <div class="recreate-9f content-setting" id="content">
-           
-              <div class="loading-card">
-                <div class="loading"><div></div><div></div><div></div></div>
-              </div>
+            <div class="container">
+                <div class="hero-text">
+                    <div class="hero-title">Welcome to Manga List</div>
+                    <p class="hero-subtitle">Find your favorite anime and manga here</p>
+                </div>
+                <div class="hero-filter">
+                    <a class="filterBtn">
+                        <button class="btn-filter">Filter & Search</button>
+                    </a>
+                </div>
             </div>
-          </div>
-        </section>
 
-        <section class="container">
-          <div class="filter-card">
-            <p class="genre anime-category">Top Upcoming</p>
-            <p class="genre">More ></p>
-          </div>
-          <div class="top-popular">
-            <div class="recreate-9g content-setting" id="content">
-              <div class="loading-card">
-                <div class="loading"><div></div><div></div><div></div></div>
-              </div>
+            <button onclick="scrollToTop()" id="scroll"
+                style="display:none;position:fixed;bottom:20px;right:20px;">^</button>
+
+            <div class="container">
+                <div class="filter">
+                    <a class="filter-title">Type</a>
+                    <div class="filter-inside">
+                        <a class="filter-value" href="index.html">Anime</a>
+                        <a class="filter-value" href="manga.html">Manga</a>
+                    </div>
+
+                    <a class="filter-title">Genre</a>
+                    <div class="filter-inside">
+                 
+                        <a class="filter-value" href="#top-comedy">Comedy</a>
+                    </div>
+
+                    <a class="filter-title">Top</a>
+                    <div class="filter-inside">
+                        <a class="filter-value" href="#top-trending">Top Trending</a>
+                        <a class="filter-value" href="#top-upcoming">Top Upcoming</a>
+                        <a class="filter-value" href="#top-comedy">O` Comedy</a>
+                    </div>
+                </div>
+
+
+                <div class="top-trending rsx" id="top-trending">
+                    <div class="filter-card">
+                        <p class="genre anime-category">Top Trending</p>
+                        <p class="genre more-loading"></p>
+                        <a class="genre more-1 more">More ></a>
+                    </div>
+
+                    <div class="back content-setting content-1" id="content">
+                        <div class="loading-card">
+                            <div class="loading">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <!-- https://placehold.co/600x400 -->
+
+
+                        <!-- <div class="inside-card">
+                            <a href="">
+                                <img class="image-card" src="https://placehold.co/400" />
+                            </a>
+                            <div class="box">
+                                <a href="" class="name">Shadow Garden Infinity</a>
+                                <a class="rank">Rank :</a><br />
+
+                                <a class="rating">Rating: <span class="rating-value">${attr.averageRating}</span>
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="top-upcoming rsx" id="top-upcoming">
+                    <div class="filter-card">
+                        <p class="genre anime-category">Top Upcoming</p>
+                        <p class="genre more-loading-2"></p>
+                        <a class="genre more-2 more">More ></a>
+                    </div>
+
+                    <div class="back content-setting content-2" id="content">
+                        <div class="loading-card">
+                            <div class="loading">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <!-- https://placehold.co/600x400 -->
+
+
+                        <!-- <div class="inside-card">
+                            <a href="">
+                                <img class="image-card" src="https://placehold.co/400" />
+                            </a>
+                            <div class="box">
+                                <a href="" class="name">Shadow Garden Infinity</a>
+                                <a class="rank">Rank :</a><br />
+
+                                <a class="rating">Rating: <span class="rating-value">${attr.averageRating}</span>
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="top-comedy rsx" id="top-comedy">
+                    <div class="filter-card">
+                        <p class="genre anime-category">Comedy's</p>
+                        <p class="genre more-loading-3"></p>
+                        <a class="genre more-3 more">More ></a>
+                    </div>
+
+                    <div class="back content-setting content-3" id="content">
+                        <div class="loading-card">
+                            <div class="loading">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <!-- https://placehold.co/600x400 -->
+
+
+                        <!-- <div class="inside-card">
+                            <a href="">
+                                <img class="image-card" src="https://placehold.co/400" />
+                            </a>
+                            <div class="box">
+                                <a href="" class="name">Shadow Garden Infinity</a>
+                                <a class="rank">Rank :</a><br />
+
+                                <a class="rating">Rating: <span class="rating-value">${attr.averageRating}</span>
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
             </div>
-          </div>
-        </section>
 
-        <section class="container">
-          <div class="filter-card">
-            <p class="genre anime-category">Top Airing</p>
-            <p class="genre">More ></p>
-          </div>
-          <div class="top-popular">
-            <div class="recreate-9h content-setting" id="content">
-              <div class="loading-card">
-                <div class="loading"><div></div><div></div><div></div></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-      </div>
-
-      <div class="left-bar">
-        <div class="top">
-          <label class="category-title">Category</label>
-
-          <ul class="category">
-            <li>
-              <a href="index.html" class="category-text first-category"
-                >Anime</a
-              >
-            </li>
-            <li><a href="manga.html" class="category-text">Manga</a></li>
-          </ul>
         </div>
 
-        <div class="top">
-          <label class="category-title">Genre</label>
+    </div>
+    <!-- <div class="background">
+        <img src="profile.jpg" alt="">
+    </div> -->
 
-          <ul class="category">
-            <li>
-              <a href="anime.html" class="category-text first-category"
-                >Comedy</a
-              >
-            </li>
-            <li><a href="anime/romance.html" class="category-text">Romance</a></li>
-            <li><a href="#" class="category-text">Fantasy</a></li>
-            <li><a href="#" class="category-text">Action</a></li>
-            <li><a href="#" class="category-text">Drama</a></li>
-            <li><a href="#" class="category-text">Sports</a></li>
-            <li><a href="#" class="category-text">Adventure</a></li>
-          </ul>
-        </div>
-      </div>
-    </main>
+    </div>
 
-    <script src="js/manga.js"></script>
-    <script src="js/nav.js"></script><script src="js/title-hero.js"></script>
-  </body>
+    <script src="manga.js"></script>
+</body>
+
 </html>
+<!-- https://doujindesu.tv/reborn-with-big-rizz-energy-chapter-02 -->
