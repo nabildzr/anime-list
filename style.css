@@ -200,6 +200,7 @@ body {
   padding: 15px;
   border-radius: 15px;
   margin: 20px 0 15px;
+  
 }
 
 .filter:hover {
@@ -238,12 +239,14 @@ body {
 
 /* content */
 .filter-card {
+    margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .anime-category {
+  font-size: 30px;
   display: flex;
   font-weight: bold;
   justify-content: space-between;
@@ -274,8 +277,8 @@ body {
 .image-card:hover {
   transform: scale(1.02);
   transition: transform 0.15s cubic-bezier(0, 0.1, 0.15, 6);
-  filter: brightness(80%);
-    box-shadow: 0 0 10px rgb(255, 209, 122, 0.7);
+  filter: brightness(70%);
+  box-shadow: 0 0 40px rgb(255, 209, 122, 0.25)
 }
 
 .back {
