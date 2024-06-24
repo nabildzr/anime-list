@@ -268,13 +268,14 @@ body {
   height: 150px;
   transition: transform 0.15s cubic-bezier(0, 0.1, 0.15, 6);
   border-radius: 20px;
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.7);
+
 }
 
 .image-card:hover {
   transform: scale(1.02);
   transition: transform 0.15s cubic-bezier(0, 0.1, 0.15, 6);
-  filter: brightness(85%);
+  filter: brightness(80%);
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.7);
 }
 
 .back {
