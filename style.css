@@ -275,7 +275,7 @@ body {
   transform: scale(1.02);
   transition: transform 0.15s cubic-bezier(0, 0.1, 0.15, 6);
   filter: brightness(80%);
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgb(255, 209, 122, 0.7);
 }
 
 .back {
